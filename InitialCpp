@@ -5,7 +5,7 @@ Beats 100.00%
 Memory 8.35 MB
 Beats 99.99%
 
-I think runtime is probably a bit incorrect I feel like their is a faster way for it to be done might retry later
+The runtime is probably a bit incorrect. I feel like there is a faster way for it to be done, might retry later
 */
 class Solution {
 public:
@@ -40,7 +40,6 @@ public:
         while(0 < checkSize){
             tempA = a.back();
             tempB = b.back();
-            //cout << tempA<< " "<< tempB << endl;
             //checking if there is carry over to add
             if(futureAdd > 0){
                 adder = futureAdd;
@@ -48,18 +47,14 @@ public:
             }
             //deciding bit
             if(tempA == '1'){
-                //cout << "enter";
                 adder++;
             }
             if(tempB == '1'){
-                //cout << "enter";
                 adder++;
             }
             adder = futureAdd + adder;
-            //cout << adder << endl;
             //giving the value and potential carry over
             if(adder>0){
-                //cout << "enter";
                 if(adder==1){
                     c.insert (0, 1, '1');
                     adder=0;
@@ -84,7 +79,7 @@ public:
             }
             checkSize--;
         }
-        //just to keep longest 
+        //to keep the longest of the strings
         if(a.size()>b.size()){
             longest = a;
         }
@@ -93,9 +88,7 @@ public:
         }
       //doing the math on the remaining string left
         while(0 < soloSize){
-            //cout << longest.back() << endl;
             tempA = longest.back();
-            cout << tempA << endl;
             if(futureAdd>0){
                 adder= futureAdd;
                 futureAdd = 0;
@@ -127,7 +120,7 @@ public:
             }
             soloSize--;
         }
-            //incase of final remaining carry
+            //in case of final remaining carry
             if(futureAdd>0||adder >0){
                 c.insert (0, 1, '1');
                 futureAdd = 0;
